@@ -215,7 +215,7 @@ div.image {
 }
 
 /* Servises provided by company */
-.services {
+/* .services {
     margin-top: 5vh;
     height: 50vh;
 }
@@ -267,6 +267,56 @@ div.image {
     font-weight: bold;
     text-align: center;
     /* text-shadow: 1px 1px 2px #aaaaaa; */
+
+.services {
+    /* position: absolute; */
+    top: 20vh;
+    width: 100%;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    height: 75vh;
+    background-color: rgba(255, 255, 255, 0.7);
+}
+
+.services-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    width: 90%;
+    height: 80%;
+}
+
+.services h2 {
+    font-size: calc(1.6rem + .2vw);
+    font-weight: 600;
+    color: var(--aboutUsH1Color);
+}
+
+.horizontalMenu {
+    box-shadow: 0 0 1rem 0 rgba(0, 0, 0, .8);
+    width: 15vw;
+    height: 15vw;
+    margin: 2.5vw 2.5vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.horizontalMenu img {
+    width: 40%;
+    color: var(--aboutUsTextColor);
+}
+
+.horizontalMenu p {
+    font-size: 1.4rem;
+    font-weight: 600;
+    text-align: center;
+    color: var(--aboutUsTextColor);
 }
 
 /* Styling for opinions container */
