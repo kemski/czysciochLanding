@@ -1,3 +1,23 @@
+const moreButton = document.querySelector(".moreOpinions");
+const opinionContainer = document.querySelector(".opinionsContainer");
+
+window.addEventListener('load', removeActive);
+moreButton.addEventListener('click', addActive);
+
+function removeActive() {
+    opinionContainer.classList.remove("active");
+}
+
+function addActive() {
+    opinionContainer.classList.toggle("active");
+    if (opinionContainer.classList.contains("active")) {
+        moreButton.innerText = "mniej";
+    } else {
+        moreButton.innerText = "więcej";
+    }
+}
+
+
 function validation() {
     const form = document.querySelector('.form-e-mail');
     const mail = document.querySelector('.emailInput').value;
@@ -26,29 +46,34 @@ function validation() {
     }
 }
 
-
-const navSlide = () => {
-    const burger = document.querySelector('.burger');
-    const nav = document.querySelector('.topNav')
-    const moveImage = document.querySelector('.image');
-    const moveAboutUs = document.querySelector('.aboutUs');
-    const navLinks = document.querySelectorAll('.topNav ul li')
-
-    burger.addEventListener('click', () => {
-        nav.classList.toggle('topNav-active');
-        moveAboutUs.classList.toggle('moveDownAboutUs');
-        moveImage.classList.toggle('moveDownImage');
-
-        navLinks.forEach((link, index) => {
-            if (link.style.animation) {
-                link.style.animation = '';
-            } else {
-                link.style.animation = `navLinkFadeIn 0.5s ease forwards ${index / 7+0.5}s`;
-                console.log(index / 7);
-            }
-        });
-        //burger animation
-        burger.classList.toggle('toggle');
-    });
+function autoGrow(element) {
+    element.style.height = "5px";
+    element.style.height = (element.scrollHeight) + "px";
 }
-navSlide();
+
+
+// const navSlide = () => {
+//     const burger = document.querySelector('.burger');
+//     const nav = document.querySelector('.topNav')
+//     const moveImage = document.querySelector('.image');
+//     const moveAboutUs = document.querySelector('.aboutUs');
+//     const navLinks = document.querySelectorAll('.topNav ul li')
+
+//     burger.addEventListener('click', () => {
+//         nav.classList.toggle('topNav-active');
+//         moveAboutUs.classList.toggle('moveDownAboutUs');
+//         moveImage.classList.toggle('moveDownImage');
+
+//         navLinks.forEach((link, index) => {
+//             if (link.style.animation) {
+//                 link.style.animation = '';
+//             } else {
+//                 link.style.animation = `navLinkFadeIn 0.5s ease forwards ${index / 7+0.5}s`;
+//                 console.log(index / 7);
+//             }
+//         });
+//         //burger animation
+//         burger.classList.toggle('toggle');
+//     });
+// }
+// navSlide();
